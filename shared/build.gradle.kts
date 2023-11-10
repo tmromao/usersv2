@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.sqldelight)
 }
 
 kotlin {
@@ -26,9 +27,18 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             //put your multiplatform dependencies here
+            implementation(libs.sqldelight.coroutines)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+        androidMain.dependencies {
+            //put your android dependencies here
+            implementation(libs.sqldelight.driver.android)
+        }
+        iosMain.dependencies {
+            //put your ios dependencies here
+            implementation(libs.sqldelight.driver.native)
         }
     }
 }
