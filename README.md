@@ -1,0 +1,1 @@
+Testing KMM app development (Android and iOS). Setting a SQLDelight DB, users. Displaying it in a screen. Learn how to implement SQLDelight + dependency injection in Koin. Put Voyager lib. for navigation.
