@@ -34,7 +34,7 @@ fun UserListScreen(
                     .clickable {
                         onEvent(UserListEvent.OnUserSelected(user))
                     }
-
+                    .padding(16.dp)
             )
         }
     }
