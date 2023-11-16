@@ -18,6 +18,9 @@ koinCompose = "1.1.0"
 
 sqldelight = "2.0.0"
 
+dev-icerock-moko-mvvm-version = "0.16.1"
+
+
 [libraries]
 
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -25,16 +28,12 @@ kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotl
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity-compose" }
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core-ktx" }
 androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "androidx-lifecycle-runtime" }
-
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose-multiplatform" }
 
 compose-animations = { module = "org.jetbrains.compose.animation:animation", version.ref = "compose-multiplatform" }
-
 compose-foundation = { module = "org.jetbrains.compose.foundation:foundation", version.ref = "compose-foundation" }
-
 compose-material = { module = "org.jetbrains.compose.material:material", version.ref = "compose-material" }
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose-material3" }
-
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose-runtime" }
 
 koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
@@ -44,6 +43,11 @@ koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComp
 sqldelight-driver-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-driver-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }
 sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref = "sqldelight" }
+
+dev-icerock-moko-mvvm-compose = { module = "dev.icerock.moko:mvvm-compose", version.ref = "dev-icerock-moko-mvvm-version" }
+dev-icerock-moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "dev-icerock-moko-mvvm-version" }
+dev-icerock-moko-mvvm-flow = { module = "dev.icerock.moko:mvvm-flow", version.ref = "dev-icerock-moko-mvvm-version" }
+dev-icerock-moko-mvvm-flow-compose = { module = "dev.icerock.moko:mvvm-flow-compose", version.ref = "dev-icerock-moko-mvvm-version" }
 
 
 [plugins]
@@ -61,9 +65,15 @@ sqldelight = { id = "app.cash.sqldelight", version.ref = "sqldelight" }
 
 [bundles]
 compose-multiplatform = [
+    "compose-runtime",
     "compose-animations",
     "compose-foundation",
     "compose-material",
-    "compose-material3",
-    "compose-runtime"
+    "compose-material3"
+]
+moko-mvvm = [
+    "dev-icerock-moko-mvvm-core",
+    "dev-icerock-moko-mvvm-compose",
+    "dev-icerock-moko-mvvm-flow",
+    "dev-icerock-moko-mvvm-flow-compose",
 ]

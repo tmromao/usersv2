@@ -11,7 +11,7 @@ kotlin {
     androidTarget {
         compilations.all {
             kotlinOptions {
-                jvmTarget = "1.8"
+                jvmTarget = "17"
             }
         }
     }
@@ -37,6 +37,8 @@ kotlin {
                 implementation(libs.sqldelight.coroutines)
                 implementation(libs.koin.core)
                 implementation(libs.koin.compose)
+
+                api(libs.bundles.moko.mvvm)
             }
 
         }
@@ -67,5 +69,12 @@ android {
     compileSdk = 34
     defaultConfig {
         minSdk = 29
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    kotlin {
+        jvmToolchain(17)
     }
 }
