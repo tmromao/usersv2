@@ -6,10 +6,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.usersv2.domain.UserListItem
 import com.example.usersv2.presentation.UserListEvent
@@ -17,7 +17,7 @@ import com.example.usersv2.presentation.UserListState
 
 @Composable
 fun UserListScreen(
-    state: UserListState,
+    state: State<UserListState>,
     onEvent: (UserListEvent) -> Unit,
 ) {
     LazyColumn(
