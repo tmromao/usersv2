@@ -8,12 +8,12 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
-
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.usersv2.domain.UserListItem
 import com.example.usersv2.presentation.UserListEvent
 import com.example.usersv2.presentation.UserListState
+
 
 @Composable
 fun UserListScreen(
@@ -26,13 +26,13 @@ fun UserListScreen(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
-        items(state.users) { user ->
+       items(state.value.users) { user ->
             UserListItem(
                 user = user,
                 modifier = Modifier
                     .fillMaxWidth()
                     .clickable {
-                        onEvent(UserListEvent.OnUserSelected(user))
+                        //onEvent(UserListEvent.OnUserSelected(user))
                     }
                     .padding(16.dp)
             )
