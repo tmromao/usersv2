@@ -20,6 +20,7 @@ fun UserListScreen(
     state: State<UserListState>,
     onEvent: (UserListEvent) -> Unit,
 ) {
+
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(16.dp),

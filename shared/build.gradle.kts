@@ -15,7 +15,7 @@ kotlin {
             }
         }
     }
-    
+
     listOf(
         iosX64(),
         iosArm64(),
@@ -43,13 +43,13 @@ kotlin {
 
         }
         val commonTest by getting {
-            dependencies{
+            dependencies {
                 implementation(libs.kotlin.test)
             }
         }
         val androidMain by getting {
             //put your android dependencies here
-            dependencies{
+            dependencies {
                 implementation(libs.androidx.core.ktx)
                 implementation(libs.sqldelight.driver.android)
             }
@@ -76,5 +76,13 @@ android {
     }
     kotlin {
         jvmToolchain(17)
+    }
+}
+
+sqldelight {
+    databases {
+        create("UsersDatabase") {
+            packageName.set("com.example.usersv2.database")
+        }
     }
 }

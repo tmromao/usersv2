@@ -1,0 +1,27 @@
+CREATE TABLE userEntity(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL
+);
+
+getUsers:
+SELECT *
+FROM userEntity
+ORDER BY id ASC;
+
+insertUserEntity:
+INSERT OR REPLACE
+INTO userEntity (
+id,
+name,
+email
+) VALUES (?, ?, ?);
+
+deleteUserEntity:
+DELETE FROM userEntity
+WHERE id = :id;
+
+getUserEntityById:
+SELECT *
+FROM userEntity
+WHERE id = :id;
