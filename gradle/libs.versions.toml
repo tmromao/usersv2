@@ -1,6 +1,6 @@
 [versions]
-agp = "8.1.3"
-kotlin = "1.9.20"
+agp = "8.1.3" # https://developer.android.com/studio/releases/gradle-plugin#8-1-0
+kotlin = "1.9.20" # https://kotlinlang.org/docs/releases.html#release-details
 compose-multiplatform = "1.5.10"
 compose-compiler = "1.5.4"
 compose-runtime = "1.5.10"
@@ -13,13 +13,16 @@ androidx-activity-compose = "1.8.0"
 androidx-core-ktx = "1.12.0"
 androidx-lifecycle-runtime = "2.6.2"
 
-koin = "3.5.0"
-koinCompose = "1.1.0"
+#koin-version = "3.5.0"
+#koin-compose-version = "3.4.2"
+
+#koin-compose-jb = "1.0.4"
+
+material-icon-version = "1.4.1"
 
 sqldelight = "2.0.0"
 
 dev-icerock-moko-mvvm-version = "0.16.1"
-
 
 [libraries]
 
@@ -36,9 +39,12 @@ compose-material = { module = "org.jetbrains.compose.material:material", version
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose-material3" }
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose-runtime" }
 
-koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
-koin-android = { module = "io.insert-koin:koin-android", version.ref = "koin" }
-koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinCompose" }
+#koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin-version" }
+#koin-compose = { module = "io.insert-koin:koin-androidx-compose", version.ref = "koin-compose-version" }
+
+#koin-compose-mp = { module = "io.insert-koin:koin-compose", version.ref = "koin-compose-jb" }
+
+material-icon-extended = { module = "org.jetbrains.compose.material:material-icons-extended", version.ref = "material-icon-version" }
 
 sqldelight-driver-android = { module = "app.cash.sqldelight:android-driver", version.ref = "sqldelight" }
 sqldelight-driver-native = { module = "app.cash.sqldelight:native-driver", version.ref = "sqldelight" }

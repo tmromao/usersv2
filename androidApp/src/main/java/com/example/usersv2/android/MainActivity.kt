@@ -1,16 +1,15 @@
 package com.example.usersv2.android
 
+//import androidx.compose.ui.tooling.preview.Preview
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.*
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import com.example.usersv2.App
-//import androidx.compose.ui.tooling.preview.Preview
-import com.example.usersv2.Greeting
+import com.example.usersv2.di.AppModule
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,7 +17,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             App(
                 darkTheme = isSystemInDarkTheme(),
-                dynamicColor = false
+                dynamicColor = false,
+                appModule = AppModule(LocalContext.current.applicationContext)
             )
         }
     }

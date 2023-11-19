@@ -35,8 +35,8 @@ kotlin {
                 implementation(libs.bundles.compose.multiplatform)
 
                 implementation(libs.sqldelight.coroutines)
-                implementation(libs.koin.core)
-                implementation(libs.koin.compose)
+  //              implementation(libs.koin.core)
+    //            implementation(libs.koin.compose)
 
                 api(libs.bundles.moko.mvvm)
             }

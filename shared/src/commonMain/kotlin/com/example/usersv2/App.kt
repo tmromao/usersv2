@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
+import com.example.usersv2.di.AppModule
 import com.example.usersv2.presentation.UserListViewModel
 import com.example.usersv2.presentation.UsersTheme
 import dev.icerock.moko.mvvm.compose.getViewModel
@@ -16,6 +17,7 @@ import dev.icerock.moko.mvvm.compose.viewModelFactory
 fun App(
     darkTheme: Boolean,
     dynamicColor: Boolean,
+    appModule: AppModule
 ) {
     UsersTheme(
         darkTheme = darkTheme,
@@ -24,7 +26,7 @@ fun App(
         val viewModel = getViewModel(
             key = "users-list-screen",
             factory = viewModelFactory {
-                UserListViewModel()
+                UserListViewModel(appModule.userDataSource)
             }
         )
         val state = viewModel.state.collectAsState()
