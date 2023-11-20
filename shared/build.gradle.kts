@@ -23,7 +23,7 @@ kotlin {
     ).forEach {
         it.binaries.framework {
             baseName = "shared"
-            isStatic = true
+            isStatic = false
         }
     }
 
@@ -35,7 +35,7 @@ kotlin {
                 implementation(libs.bundles.compose.multiplatform)
 
                 implementation(libs.sqldelight.coroutines)
-  //              implementation(libs.koin.core)
+                implementation(libs.koin.core.version)
     //            implementation(libs.koin.compose)
 
                 api(libs.bundles.moko.mvvm)
@@ -51,6 +51,7 @@ kotlin {
             //put your android dependencies here
             dependencies {
                 implementation(libs.androidx.core.ktx)
+                implementation(libs.koin.android)
                 implementation(libs.sqldelight.driver.android)
             }
 
