@@ -6,6 +6,10 @@ import org.koin.dsl.KoinAppDeclaration
 fun initKoin(appDeclaration: KoinAppDeclaration = {}) = startKoin {
     appDeclaration()
     modules(
-        dataModule
+        dataModule,
+        getViewModelByPlatform()
     )
 }
+
+// called by iOS etc
+fun initKoin() = initKoin {}

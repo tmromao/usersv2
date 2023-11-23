@@ -9,6 +9,7 @@ val dataModule = module {
     single<UserDataSource> {
         SqlDelightUserDataSource(
             db = UsersDatabase(driver = get())
+
         )
     }
 }
