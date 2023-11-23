@@ -10,10 +10,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import com.example.usersv2.App
 import com.example.usersv2.di.AppModule
+import org.koin.core.context.startKoin
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        startKoin {
+            modules(
+
+            )
+        }
+
         setContent {
             App(
                 darkTheme = isSystemInDarkTheme(),

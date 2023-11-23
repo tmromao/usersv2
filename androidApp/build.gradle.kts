@@ -43,4 +43,6 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.lifecycle.runtime)
+
+    implementation(libs.koin.android)
 }
