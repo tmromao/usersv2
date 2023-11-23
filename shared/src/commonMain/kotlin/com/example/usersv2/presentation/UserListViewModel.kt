@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.combine
 import kotlinx.coroutines.flow.stateIn
+import kotlinx.coroutines.launch
 
 class UserListViewModel(
     private val userDataSource: UserDataSource,
@@ -34,6 +35,18 @@ class UserListViewModel(
 
     var newUser: User? by mutableStateOf(null)
         private set
+
+    init{
+        viewModelScope.launch {
+            userDataSource.insertUser(
+                User(
+                    id = 1,
+                    name = "User 1",
+                    email = "")
+            )
+
+        }
+    }
 
     fun onEvent(event: UserListEvent) {
 
